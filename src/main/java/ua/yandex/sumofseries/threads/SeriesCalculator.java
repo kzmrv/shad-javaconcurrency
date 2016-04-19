@@ -27,7 +27,7 @@ public class SeriesCalculator {
         partitions = activeThreads;
     }
 
-    public double Calculate() throws InterruptedException {
+    public double calculate() throws InterruptedException {
         double startTime = System.currentTimeMillis();
         double fragment = (end - start) / partitions;
         Thread[] threads = new Thread[partitions];

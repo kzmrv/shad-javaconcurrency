@@ -21,7 +21,7 @@ public class SeriesCalculatorTest {
             ExecutionException {
         SeriesCalculator instance = new SeriesCalculator(x -> Math.sin(x)
                 * Math.cos(x), 0, 1000, 1);
-        double res = instance.Calculate();
+        double res = instance.calculate();
         System.out.println("Single thread exection time is "
                 + instance.getLastDuration());
         System.out.println("Single thread execution result is "
@@ -34,7 +34,7 @@ public class SeriesCalculatorTest {
             ExecutionException {
         SeriesCalculator instance = new SeriesCalculator(x -> Math.sin(x)
                 * Math.cos(x), 0, 1000, 5);
-        double res = instance.Calculate();
+        double res = instance.calculate();
         System.out.println("Five threads exection time is "
                 + instance.getLastDuration());
         System.out.println("Five threads execution result is "
@@ -48,7 +48,7 @@ public class SeriesCalculatorTest {
             ExecutionException {
         SeriesCalculator instance = new SeriesCalculator(x -> Math.sin(x)
                 * Math.cos(x), 0, 1000, 7);
-        double res = instance.Calculate();
+        double res = instance.calculate();
         System.out.println("Seven threads exection time is "
                 + instance.getLastDuration());
         System.out.println("Seven threads execution result is "
@@ -62,7 +62,7 @@ public class SeriesCalculatorTest {
             ExecutionException {
         SeriesCalculator instance = new SeriesCalculator(x -> Math.sin(x)
                 * Math.cos(x), 0, 1000, 100);
-        double res = instance.Calculate();
+        double res = instance.calculate();
         System.out.println("Hundred threads exection time is "
                 + instance.getLastDuration());
         System.out.println("Hundred threads execution result is "
@@ -76,7 +76,7 @@ public class SeriesCalculatorTest {
             ExecutionException {
         SeriesCalculator instance = new SeriesCalculator(x -> Math.sin(x)
                 * Math.cos(x), 0, 1000, 5);
-        int p = instance.SearchParameter(new LinkedList<Integer>(Arrays.asList(
+        int p = instance.searchParameter(new LinkedList<Integer>(Arrays.asList(
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)));
         System.out.println("Optimal number of threads "
                 + p);

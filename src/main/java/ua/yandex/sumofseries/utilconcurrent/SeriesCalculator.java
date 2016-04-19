@@ -35,7 +35,7 @@ public class SeriesCalculator {
         pool = Executors.newFixedThreadPool(activeThreads);
     }
 
-    public double Calculate() throws InterruptedException,
+    public double calculate() throws InterruptedException,
             ExecutionException {
         double startTime = System.currentTimeMillis();
         result = 0.0;
@@ -59,14 +59,14 @@ public class SeriesCalculator {
         return res;
     }
 
-    public int SearchParameter(Iterable<Integer> values) throws
+    public int searchParameter(Iterable<Integer> values) throws
             InterruptedException, ExecutionException {
         double minTime = 0;
         int minValue = 0;
         for (int value : values) {
             partitions = value;
             pool = Executors.newFixedThreadPool(partitions);
-            Calculate();
+            calculate();
             double cTime = getLastDuration();
             if ((cTime < minTime) || (minTime == 0)) {
                 minTime = cTime;
